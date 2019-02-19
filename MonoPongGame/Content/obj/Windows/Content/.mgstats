@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bola.png","Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bin/Windows/Content/bola.xnb","TextureProcessor","Texture2DContent",2420,4181,0.3914935
+"Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/gameplay.jpg","Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bin/Windows/Content/gameplay.xnb","TextureProcessor","Texture2DContent",89867,1920085,0.0699639
+"Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/jogador.png","Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bin/Windows/Content/jogador.xnb","TextureProcessor","Texture2DContent",8702,16469,0.0059962

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/VS/Trovão/MonoPongGame/MonoPongGame/Content/bola.png</File>
+    <File>C:/VS/Trovão/MonoPongGame/MonoPongGame/Content/gameplay.jpg</File>
+    <File>C:/VS/Trovão/MonoPongGame/MonoPongGame/Content/jogador.png</File>
+  </SourceFiles>
+</SourceFileCollection>
