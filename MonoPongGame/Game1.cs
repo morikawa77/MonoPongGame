@@ -93,6 +93,66 @@ namespace MonoPongGame
                 Exit();
             }
 
+            GamePadCapabilities c = GamePad.GetCapabilities(PlayerIndex.One);
+            if (c.IsConnected)
+            {
+                GamePadState state = GamePad.GetState(PlayerIndex.One);
+                if (c.HasLeftYThumbStick)
+                {
+                    if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y == 1.0f)
+                    {
+                        jogador1.Direcao = new Vector2(0.0f, -2.0f);
+
+                        if (jogador1.Posicao.Y < 0.0f)
+                        {
+                            jogador1.Direcao = new Vector2(0.0f, 0.0f);
+                        }
+                    }
+                    else if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y == -1.0f)
+                    {
+                        jogador1.Direcao = new Vector2(0.0f, 2.0f);
+                        if (jogador1.Posicao.Y + jogador1.Textura.Height > 600.0f)
+                        {
+                            jogador1.Direcao = new Vector2(0.0f, 0.0f);
+                        }
+                    }
+                    else
+                    {
+                        jogador1.Direcao = Vector2.Zero;
+                    }
+
+                    jogador1.Update(gameTime);
+                }
+                    
+
+                if(c.HasRightYThumbStick)
+                {
+                    if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y == 1.0f)
+                    {
+                        jogador2.Direcao = new Vector2(0.0f, -2.0f);
+
+                        if (jogador2.Posicao.Y < 0.0f)
+                        {
+                            jogador2.Direcao = new Vector2(0.0f, 0.0f);
+                        }
+                    }
+                    else if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y == -1.0f)
+                    {
+                        jogador2.Direcao = new Vector2(0.0f, 2.0f);
+                        if (jogador2.Posicao.Y + jogador1.Textura.Height > 600.0f)
+                        {
+                            jogador2.Direcao = new Vector2(0.0f, 0.0f);
+                        }
+                    }
+                    else
+                    {
+                        jogador2.Direcao = Vector2.Zero;
+                    }
+
+                    jogador2.Update(gameTime);
+                }
+            }
+
             // TODO: Add your update logic here
             //imput por teclado
             KeyboardState teclado = Keyboard.GetState();
@@ -171,6 +231,7 @@ namespace MonoPongGame
                 bola.Direcao *= new Vector2(-1.0f, 1.0f);
 
                 Random rnd = new Random();
+                // de /2(50%) a /5(20%)
                 int indice = rnd.Next(2, 5);
 
                 bola.AumentarVelocidade(indice);
