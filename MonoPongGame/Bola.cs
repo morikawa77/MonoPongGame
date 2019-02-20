@@ -18,8 +18,8 @@ namespace MonoPongGame
         public Vector2 Direcao { get; set; }
 
         //variaveis
-
         float velocidade;
+        float angulo;
 
         public Bola(Game game, Vector2 posicao): base(game)
         {
@@ -27,6 +27,7 @@ namespace MonoPongGame
             Posicao = posicao;
             Direcao = new Vector2(1.0f,1.0f);
             velocidade = 150.0f;
+            angulo = 0;
         }
 
 
@@ -34,15 +35,20 @@ namespace MonoPongGame
         {
 
             //aceleração para movimento
-
             Posicao += Direcao * velocidade * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            
-
+            angulo += 0.30f;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Textura , Posicao, Color.White);
+            // spriteBatch.Draw(Textura , Posicao, Color.White);
+
+            // desenhar com rotacao
+            // eixo de rotacao
+            Vector2 eixoPosicaoRotacao = new Vector2(Textura.Width / 2, Textura.Height / 2);
+            Rectangle rotacaoRetangulo = new Rectangle(0, 0, Textura.Width, Textura.Height);
+            spriteBatch.Draw(Textura, Posicao, rotacaoRetangulo, Color.White, angulo, eixoPosicaoRotacao, 1.0f, SpriteEffects.None, 1);
+
         }
 
         // metodo da colisao
