@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace MonoPongGame
 {
@@ -168,6 +169,11 @@ namespace MonoPongGame
             {
                 // Inverter a direcao de X da bola
                 bola.Direcao *= new Vector2(-1.0f, 1.0f);
+
+                Random rnd = new Random();
+                int indice = rnd.Next(2, 5);
+
+                bola.AumentarVelocidade(indice);
             }
             
             base.Update(gameTime);

@@ -35,17 +35,8 @@ namespace MonoPongGame
 
             //aceleração para movimento
 
-            //Posicao += Direcao * velocidade * (float)gameTime.ElapsedGameTime.TotalSeconds;
-
-            float x = 10.0f;
-            do
-            {
-                Posicao += Direcao * (velocidade + x) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            }
-            while (x < 150.0f);
-
-            base.Update(gameTime);
-
+            Posicao += Direcao * velocidade * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            
 
         }
 
@@ -62,6 +53,16 @@ namespace MonoPongGame
                 (int)Posicao.Y,
                 Textura.Width,
                 Textura.Height);
+        }
+
+        public void AumentarVelocidade(int indice)
+        {
+            // velocidade por proporcao
+            // velocidade += velocidade / 2;
+            if (velocidade < 450.0f)
+            {
+                velocidade += velocidade / indice;
+            }    
         }
     }
 }
