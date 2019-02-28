@@ -23,10 +23,11 @@ Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\x64\Debug\SharpDX.DXGI.xml
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\x64\Debug\SharpDX.Direct3D11.xml
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\x64\Debug\SharpDX.Direct2D1.xml
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\x64\Debug\SharpDX.XInput.xml
-Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\obj\x64\Debug\MonoPongGame.csprojAssemblyReference.cache
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\obj\x64\Debug\MonoPongGame.csproj.CoreCompileInputs.cache
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\obj\x64\Debug\MonoPongGame.csproj.CopyComplete
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\obj\x64\Debug\MonoPongGame.exe
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\obj\x64\Debug\MonoPongGame.pdb
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\x64\Debug\Content\gamestart.xnb
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\x64\Debug\Content\gameover.xnb
+Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\x64\Debug\Content\gamewin.xnb
+Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\obj\x64\Debug\MonoPongGame.csprojAssemblyReference.cache

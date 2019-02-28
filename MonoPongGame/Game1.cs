@@ -20,6 +20,7 @@ namespace MonoPongGame
         Texture2D gameplay;
         Texture2D gamestart;
         Texture2D gameover;
+        Texture2D gamewin;
 
         //entidade
         Bola bola;
@@ -41,8 +42,8 @@ namespace MonoPongGame
 
         // estados do jogo
         Jogo jogo;
+        private GameTime gameTime;
 
-        
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -71,7 +72,7 @@ namespace MonoPongGame
             base.Initialize();
             jogo = Jogo.GameStart;
             MediaPlayer.Play(musica);
-
+            MediaPlayer.IsRepeating = true;
         }
 
         /// <summary>
@@ -89,6 +90,7 @@ namespace MonoPongGame
             gameplay = Content.Load<Texture2D>("gameplay");
             gamestart = Content.Load<Texture2D>("gamestart");
             gameover = Content.Load<Texture2D>("gameover");
+            gamewin = Content.Load<Texture2D>("gamewin");
 
             //istancia do objeto
             bola = new Bola(this, new Vector2(384.0f, 300.0f));
@@ -98,6 +100,7 @@ namespace MonoPongGame
             // carrega musica e efeito sonoro
             musica = Content.Load<Song>("musica");
             pontoSom = Content.Load<SoundEffect>("risada");
+            
 
             // carrega o spriteFont para o placar
             placarFont = Content.Load<SpriteFont>("font");
@@ -157,7 +160,7 @@ namespace MonoPongGame
                     jogador1.Update(gameTime);
                 }
 
-
+                /*
                 if (c.HasRightYThumbStick)
                 {
                     if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y == 1.0f)
@@ -185,14 +188,26 @@ namespace MonoPongGame
                     jogador2.Update(gameTime);
                 }
 
+                */
+
                 if (c.HasStartButton)
                 {
-                    // TODO
+
                     // Se apertar start
-                    /*if (GamePadState.Buttons.Start == ButtonState.Pressed)
+                    if (state.IsButtonDown(Buttons.Start))
                     {
                         jogo = Jogo.GamePlay;
-                    } */
+                    } 
+                }
+
+                if (c.HasBButton)
+                {
+                    // Se apertar B
+                    if (state.IsButtonDown(Buttons.B))
+                    {
+                        jogo = Jogo.GameStart;
+                        RestartGame();
+                    }
                 }
             }
 
@@ -243,7 +258,7 @@ namespace MonoPongGame
 
             jogador1.Update(gameTime);
 
-
+            /*
             if (teclado.IsKeyDown(Keys.Up))
             {
                 jogador2.Direcao = new Vector2(0.0f, -2.0f);
@@ -268,6 +283,11 @@ namespace MonoPongGame
                 jogador2.Direcao = Vector2.Zero;
             }
 
+            jogador2.Update(gameTime);
+
+            */
+
+            MoveBastaoComputador();
             jogador2.Update(gameTime);
 
             switch (jogo)
@@ -312,7 +332,7 @@ namespace MonoPongGame
                         score[0] += 1;
                         if (score[0] >= totalpontos)
                         {
-                            jogo = Jogo.GameOver;
+                            jogo = Jogo.GameWin;
                             RestartGame();
                         }
                     }
@@ -334,10 +354,8 @@ namespace MonoPongGame
                     break;
             }
 
+
             
-
-
-
             base.Update(gameTime);
         }
 
@@ -376,6 +394,9 @@ namespace MonoPongGame
                 case Jogo.GameOver:
                     spriteBatch.Draw(gameover, Vector2.Zero, Color.White);
                     break;
+                case Jogo.GameWin:
+                    spriteBatch.Draw(gamewin, Vector2.Zero, Color.White);
+                    break;
             }
             
 
@@ -392,12 +413,43 @@ namespace MonoPongGame
             score[0] = score[1] = 000;
         }
 
+        public void MoveBastaoComputador()
+        {
+            
+            if (bola.Posicao.Y < jogador2.Posicao.Y)
+            {
+                jogador2.Direcao = new Vector2(0.0f, -2.5f);
+
+                if (jogador2.Posicao.Y < 0.0f)
+                {
+                    jogador2.Direcao = new Vector2(0.0f, 0.0f);
+                }
+            }
+            
+            else if (bola.Posicao.Y > jogador2.Posicao.Y)
+            {
+                jogador2.Direcao = new Vector2(0.0f, 2.5f);
+                if (jogador2.Posicao.Y + jogador2.Textura.Height > 600.0f)
+                {
+                    jogador2.Direcao = new Vector2(0.0f, 0.0f);
+                }
+            }
+            // Verifica parado
+            else
+            {
+                jogador2.Direcao = Vector2.Zero;
+            }
+
+            // jogador2.Update(gameTime);
+        }
+
     }
 
     public enum Jogo
     {
         GameStart,
         GamePlay,
-        GameOver
+        GameOver,
+        GameWin
     }
 }

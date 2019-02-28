@@ -4,8 +4,12 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/gamewin.jpg</File>
     <File>C:/VS/Trovão/MonoPongGame/MonoPongGame/Content/bola.png</File>
     <File>C:/VS/Trovão/MonoPongGame/MonoPongGame/Content/gameplay.jpg</File>
     <File>C:/VS/Trovão/MonoPongGame/MonoPongGame/Content/jogador.png</File>
   </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+  </DestFiles>
 </SourceFileCollection>
