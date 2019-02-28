@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using System;
 
 namespace MonoPongGame
@@ -16,11 +18,30 @@ namespace MonoPongGame
         //texturas
 
         Texture2D gameplay;
+        Texture2D gamestart;
+        Texture2D gameover;
 
         //entidade
         Bola bola;
         Bastao jogador1;
         Bastao jogador2;
+
+        // Som
+        Song musica;
+        SoundEffect pontoSom;
+
+        // Font
+        SpriteFont placarFont;
+
+        // Pontuacao
+        int[] score = new int[2];
+
+        // condicao de vitoria
+        const int totalpontos = 11;
+
+        // estados do jogo
+        Jogo jogo;
+
         
         public Game1()
         {
@@ -46,8 +67,11 @@ namespace MonoPongGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            
             base.Initialize();
+            jogo = Jogo.GameStart;
+            MediaPlayer.Play(musica);
+
         }
 
         /// <summary>
@@ -63,11 +87,20 @@ namespace MonoPongGame
 
             //carrega a textura 2d
             gameplay = Content.Load<Texture2D>("gameplay");
+            gamestart = Content.Load<Texture2D>("gamestart");
+            gameover = Content.Load<Texture2D>("gameover");
 
             //istancia do objeto
             bola = new Bola(this, new Vector2(384.0f, 300.0f));
             jogador1 = new Bastao(this,new Vector2(2, 250.0f));
             jogador2 = new Bastao(this, new Vector2(765.0f, 250.0f));
+
+            // carrega musica e efeito sonoro
+            musica = Content.Load<Song>("musica");
+            pontoSom = Content.Load<SoundEffect>("risada");
+
+            // carrega o spriteFont para o placar
+            placarFont = Content.Load<SpriteFont>("font");
         }
 
         /// <summary>
@@ -123,9 +156,9 @@ namespace MonoPongGame
 
                     jogador1.Update(gameTime);
                 }
-                    
 
-                if(c.HasRightYThumbStick)
+
+                if (c.HasRightYThumbStick)
                 {
                     if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y == 1.0f)
                     {
@@ -151,6 +184,16 @@ namespace MonoPongGame
 
                     jogador2.Update(gameTime);
                 }
+
+                if (c.HasStartButton)
+                {
+                    // TODO
+                    // Se apertar start
+                    /*if (GamePadState.Buttons.Start == ButtonState.Pressed)
+                    {
+                        jogo = Jogo.GamePlay;
+                    } */
+                }
             }
 
             // TODO: Add your update logic here
@@ -174,6 +217,23 @@ namespace MonoPongGame
                 {
                     jogador1.Direcao = new Vector2(0.0f, 0.0f);
                 }
+            }
+            else if (teclado.IsKeyDown(Keys.Enter))
+            {
+                jogo = Jogo.GamePlay;
+            }
+            else if (teclado.IsKeyDown(Keys.Escape))
+            {
+                Exit();
+            } 
+            else if (teclado.IsKeyDown(Keys.Back))
+            {
+                jogo = Jogo.GameStart;
+                RestartGame();
+            }
+            else if (teclado.IsKeyDown(Keys.Space))
+            {
+                jogo = Jogo.GamePlay;
             }
             // Verifica parado
             else
@@ -210,37 +270,78 @@ namespace MonoPongGame
 
             jogador2.Update(gameTime);
 
-            // Verifica colisao da bola com as paredes de cima e baixo
-            if (bola.Posicao.Y + bola.Textura.Height > 600.0f)
+            switch (jogo)
             {
-                bola.Direcao *= new Vector2(1.0f, -1.0f);
-            }
+                case Jogo.GameStart:
 
-            if (bola.Posicao.Y < 0.0f)
-            {
-                bola.Direcao *= new Vector2(1.0f, -1.0f);
+                    break;
+                case Jogo.GamePlay:
+                    // Verifica colisao da bola com as paredes de cima e baixo
+                    if (bola.Posicao.Y + bola.Textura.Height > 600.0f)
+                    {
+                        bola.Direcao *= new Vector2(1.0f, -1.0f);
+                    }
+
+                    if (bola.Posicao.Y < 0.0f)
+                    {
+                        bola.Direcao *= new Vector2(1.0f, -1.0f);
+                    }
+
+
+                    bola.Update(gameTime);
+
+                    // verifica a colisao da bola com os bastoes
+                    if (bola.VerificarColisao().Intersects(jogador1.VerificarColisao()) || bola.VerificarColisao().Intersects(jogador2.VerificarColisao()))
+                    {
+                        // Inverter a direcao de X da bola
+                        bola.Direcao *= new Vector2(-1.0f, 1.0f);
+
+                        Random rnd = new Random();
+                        // de /2(50%) a /5(20%)
+                        int indice = rnd.Next(2, 5);
+
+                        bola.AumentarVelocidade(indice);
+                    }
+
+
+                    // Verifica a saida da bola da tela
+                    if (bola.Posicao.X + bola.Textura.Width > 800.0f)
+                    {
+                        pontoSom.Play();
+                        bola = new Bola(this, new Vector2(384.0f, 300.0f));
+                        score[0] += 1;
+                        if (score[0] >= totalpontos)
+                        {
+                            jogo = Jogo.GameOver;
+                            RestartGame();
+                        }
+                    }
+
+                    if (bola.Posicao.X < 0.0f)
+                    {
+                        pontoSom.Play();
+                        bola = new Bola(this, new Vector2(384.0f, 300.0f));
+                        score[1] += 1;
+                        if (score[1] >= totalpontos)
+                        {
+                            jogo = Jogo.GameOver;
+                            RestartGame();
+                        }
+                    }
+                    break;
+                case Jogo.GameOver:
+
+                    break;
             }
 
             
-            bola.Update(gameTime);
 
-            // verifica a colisao da bola com os bastoes
-            if (bola.VerificarColisao().Intersects(jogador1.VerificarColisao()) || bola.VerificarColisao().Intersects(jogador2.VerificarColisao()))
-            {
-                // Inverter a direcao de X da bola
-                bola.Direcao *= new Vector2(-1.0f, 1.0f);
 
-                Random rnd = new Random();
-                // de /2(50%) a /5(20%)
-                int indice = rnd.Next(2, 5);
 
-                bola.AumentarVelocidade(indice);
-            }
-            
             base.Update(gameTime);
         }
 
-        
+
 
         /// <summary>
         /// This is called when the game should draw itself.
@@ -250,16 +351,33 @@ namespace MonoPongGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
-
-            //inicializa o desenho do jogo
+           //inicializa o desenho do jogo
 
             spriteBatch.Begin();
 
-            spriteBatch.Draw(gameplay, Vector2.Zero, Color.White);
-            bola.Draw(spriteBatch);
-            jogador1.Draw(spriteBatch);
-            jogador2.Draw(spriteBatch);
+            switch (jogo)
+            {
+                case Jogo.GameStart:
+                    spriteBatch.Draw(gamestart, Vector2.Zero, Color.White);
+                    break;
+                case Jogo.GamePlay:
+                    spriteBatch.Draw(gameplay, Vector2.Zero, Color.White);
+                    bola.Draw(spriteBatch);
+                    jogador1.Draw(spriteBatch);
+                    jogador2.Draw(spriteBatch);
+
+                    // inicializa o HUD
+                    Vector2 score1Posicao = placarFont.MeasureString(score[0].ToString("000"));
+                    Vector2 score2Posicao = placarFont.MeasureString(score[1].ToString("000"));
+
+                    spriteBatch.DrawString(placarFont, score[0].ToString("000"), new Vector2(300.0f, 35.0f) - score1Posicao / 2, Color.White);
+                    spriteBatch.DrawString(placarFont, score[1].ToString("000"), new Vector2(500.0f, 35.0f) - score2Posicao / 2, Color.White);
+                    break;
+                case Jogo.GameOver:
+                    spriteBatch.Draw(gameover, Vector2.Zero, Color.White);
+                    break;
+            }
+            
 
             //finaliza o desenho do jogo
 
@@ -268,6 +386,18 @@ namespace MonoPongGame
 
             base.Draw(gameTime);
         }
-        
+
+        public void RestartGame()
+        {
+            score[0] = score[1] = 000;
+        }
+
+    }
+
+    public enum Jogo
+    {
+        GameStart,
+        GamePlay,
+        GameOver
     }
 }

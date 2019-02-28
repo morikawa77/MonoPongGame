@@ -1,4 +1,9 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bola.png","Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bin/Windows/Content/bola.xnb","TextureProcessor","Texture2DContent",2420,4181,0.3914935
+"Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/font.spritefont","Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bin/Windows/Content/font.xnb","FontDescriptionProcessor","SpriteFontContent",2005,136209,0.3015117
+"Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/gameover.jpg","Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bin/Windows/Content/gameover.xnb","TextureProcessor","Texture2DContent",77620,1920085,0.3415621
 "Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/gameplay.jpg","Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bin/Windows/Content/gameplay.xnb","TextureProcessor","Texture2DContent",89867,1920085,0.0699639
+"Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/gamestart.jpg","Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bin/Windows/Content/gamestart.xnb","TextureProcessor","Texture2DContent",93824,1920085,0.0579523
 "Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/jogador.png","Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bin/Windows/Content/jogador.xnb","TextureProcessor","Texture2DContent",8702,16469,0.0059962
+"Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/musica.mp3","Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bin/Windows/Content/musica.xnb","SongProcessor","SongContent",912822,124,0.9345052
+"Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/risada.wav","Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bin/Windows/Content/risada.xnb","SoundEffectProcessor","SoundEffectContent",11956,12017,0.1450333

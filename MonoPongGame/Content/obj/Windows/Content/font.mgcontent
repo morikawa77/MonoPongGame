@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/font.spritefont</SourceFile>
+  <SourceTime>2019-02-26T20:08:52.0490847-03:00</SourceTime>
+  <DestFile>Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bin/Windows/Content/font.xnb</DestFile>
+  <DestTime>2019-02-26T20:42:41.4398824-03:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2018-12-08T14:35:54-02:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2018-12-08T14:35:54-02:00</ProcessorTime>
+  <Parameters>
+    <Key>PremultiplyAlpha</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/musica.mp3</SourceFile>
+  <SourceTime>2019-01-21T15:45:50-02:00</SourceTime>
+  <DestFile>Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bin/Windows/Content/musica.xnb</DestFile>
+  <DestTime>2019-02-21T22:13:16.639629-03:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2018-12-08T14:35:54-02:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2018-12-08T14:35:54-02:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/bin/Windows/Content/musica.wma</string>
+  </BuildOutput>
+</PipelineBuildEvent>

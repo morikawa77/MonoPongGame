@@ -99,8 +99,11 @@ Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\Windows\x86\Debug\SharpDX.D
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
-Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\obj\x86\Debug\MonoPongGame.csprojAssemblyReference.cache
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\obj\x86\Debug\MonoPongGame.csproj.CoreCompileInputs.cache
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\obj\x86\Debug\MonoPongGame.csproj.CopyComplete
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\obj\x86\Debug\MonoPongGame.exe
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\obj\x86\Debug\MonoPongGame.pdb
+Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\Windows\x86\Debug\Content\musica.xnb
+Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\Windows\x86\Debug\Content\musica.wma
+Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\Windows\x86\Debug\Content\risada.xnb
+Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\obj\x86\Debug\MonoPongGame.csprojAssemblyReference.cache
