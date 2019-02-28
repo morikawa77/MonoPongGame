@@ -44,6 +44,10 @@ namespace MonoPongGame
         Jogo jogo;
         private GameTime gameTime;
 
+        // Dificuldade do jogo
+        int dificuldade;
+        float enemyYacelera;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -55,7 +59,7 @@ namespace MonoPongGame
             //altura
             graphics.PreferredBackBufferHeight = 600;
 
-            //titolo do jogo
+            //titulo do jogo
             Window.Title = "MonoPong Game";
         }
 
@@ -88,7 +92,7 @@ namespace MonoPongGame
 
             //carrega a textura 2d
             gameplay = Content.Load<Texture2D>("gameplay");
-            gamestart = Content.Load<Texture2D>("gamestart");
+            gamestart = Content.Load<Texture2D>("gameplay2");
             gameover = Content.Load<Texture2D>("gameover");
             gamewin = Content.Load<Texture2D>("gamewin");
 
@@ -189,7 +193,7 @@ namespace MonoPongGame
                 }
 
                 */
-
+                // start no normal
                 if (c.HasStartButton)
                 {
 
@@ -197,7 +201,44 @@ namespace MonoPongGame
                     if (state.IsButtonDown(Buttons.Start))
                     {
                         jogo = Jogo.GamePlay;
+                        dificuldade = 2;
                     } 
+                }
+
+                // start no easy
+                if(c.HasAButton)
+                {
+
+                    // Se apertar A
+                    if (state.IsButtonDown(Buttons.A))
+                    {
+                        jogo = Jogo.GamePlay;
+                        dificuldade = 1;
+                    }
+                }
+
+                // start no hard
+                if (c.HasXButton)
+                {
+
+                    // Se apertar X
+                    if (state.IsButtonDown(Buttons.X))
+                    {
+                        jogo = Jogo.GamePlay;
+                        dificuldade = 3;
+                    }
+                }
+
+                // start no hardcore
+                if (c.HasYButton)
+                {
+
+                    // Se apertar Y
+                    if (state.IsButtonDown(Buttons.Y))
+                    {
+                        jogo = Jogo.GamePlay;
+                        dificuldade = 4;
+                    }
                 }
 
                 if (c.HasBButton)
@@ -236,6 +277,7 @@ namespace MonoPongGame
             else if (teclado.IsKeyDown(Keys.Enter))
             {
                 jogo = Jogo.GamePlay;
+                dificuldade = 2;
             }
             else if (teclado.IsKeyDown(Keys.Escape))
             {
@@ -249,6 +291,22 @@ namespace MonoPongGame
             else if (teclado.IsKeyDown(Keys.Space))
             {
                 jogo = Jogo.GamePlay;
+                dificuldade = 2;
+            }
+            else if (teclado.IsKeyDown(Keys.A))
+            {
+                jogo = Jogo.GamePlay;
+                dificuldade = 1;
+            }
+            else if (teclado.IsKeyDown(Keys.X))
+            {
+                jogo = Jogo.GamePlay;
+                dificuldade = 3;
+            }
+            else if (teclado.IsKeyDown(Keys.Y))
+            {
+                jogo = Jogo.GamePlay;
+                dificuldade = 4;
             }
             // Verifica parado
             else
@@ -411,14 +469,31 @@ namespace MonoPongGame
         public void RestartGame()
         {
             score[0] = score[1] = 000;
+            bola = new Bola(this, new Vector2(384.0f, 300.0f));
         }
 
         public void MoveBastaoComputador()
         {
             
+            switch (dificuldade)
+            {
+                case 1:
+                    enemyYacelera = 1.8f;
+                    break;
+                case 2:
+                    enemyYacelera = 2.0f;
+                    break;
+                case 3:
+                    enemyYacelera = 2.5f;
+                    break;
+                case 4:
+                    enemyYacelera = 3.0f;
+                    break;
+            }
+            
             if (bola.Posicao.Y < jogador2.Posicao.Y)
             {
-                jogador2.Direcao = new Vector2(0.0f, -2.5f);
+                jogador2.Direcao = new Vector2(0.0f, -enemyYacelera);
 
                 if (jogador2.Posicao.Y < 0.0f)
                 {
@@ -428,7 +503,7 @@ namespace MonoPongGame
             
             else if (bola.Posicao.Y > jogador2.Posicao.Y)
             {
-                jogador2.Direcao = new Vector2(0.0f, 2.5f);
+                jogador2.Direcao = new Vector2(0.0f, enemyYacelera);
                 if (jogador2.Posicao.Y + jogador2.Textura.Height > 600.0f)
                 {
                     jogador2.Direcao = new Vector2(0.0f, 0.0f);

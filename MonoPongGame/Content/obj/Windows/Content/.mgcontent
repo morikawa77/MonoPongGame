@@ -8,6 +8,7 @@
     <File>Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/font.spritefont</File>
     <File>Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/gameover.jpg</File>
     <File>Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/gameplay.jpg</File>
+    <File>Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/gameplay2.jpg</File>
     <File>Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/gamestart.jpg</File>
     <File>Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/gamewin.jpg</File>
     <File>Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/jogador.png</File>
@@ -15,6 +16,7 @@
     <File>Z:/Senac/TPJD/monogame/MonoPongGame/MonoPongGame/Content/risada.wav</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

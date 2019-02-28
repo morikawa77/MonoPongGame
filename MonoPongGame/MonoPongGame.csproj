@@ -80,6 +80,15 @@
     <Compile Include="Bola.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Jogador.cs" />
+    <Compile Include="obj\x64\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\x64\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\x64\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\x64\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\x64\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\x64\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\x86\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\x86\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\x86\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -91,15 +100,86 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Windows\x86\Debug\Content\musica.wma" />
+    <Content Include="bin\Windows\x86\Debug\MonoGame.Framework.dll" />
+    <Content Include="bin\Windows\x86\Debug\MonoGame.Framework.xml" />
+    <Content Include="bin\Windows\x86\Debug\MonoPongGame.exe" />
+    <Content Include="bin\Windows\x86\Debug\MonoPongGame.pdb" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.Direct2D1.dll" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.Direct2D1.xml" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.Direct3D11.dll" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.Direct3D11.xml" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.Direct3D9.dll" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.Direct3D9.xml" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.dll" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.DXGI.dll" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.DXGI.xml" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.XAudio2.dll" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.XAudio2.xml" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.XInput.dll" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.XInput.xml" />
+    <Content Include="bin\Windows\x86\Debug\SharpDX.xml" />
+    <Content Include="bin\x64\Debug\MonoPongGame.exe" />
+    <Content Include="bin\x64\Debug\MonoPongGame.pdb" />
+    <Content Include="Content\bin\Windows\Content\musica.wma" />
     <Content Include="Content\bola.png" />
-    <Content Include="Content\gameplay.jpg" />
+    <Content Include="Content\gameover.jpg" />
+    <Content Include="Content\gameplay2.jpg" />
+    <Content Include="Content\gamestart.jpg" />
+    <Content Include="Content\gamewin.jpg" />
     <Content Include="Content\jogador.png" />
+    <Content Include="Content\musica.mp3" />
+    <Content Include="Content\risada.wav" />
     <Content Include="Icon.ico" />
+    <Content Include="obj\x86\Debug\MonoPongGame.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\x86\Debug\MonoPongGame.exe" />
+    <Content Include="obj\x86\Debug\MonoPongGame.pdb" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
     <None Include="app.manifest" />
+    <None Include="bin\Windows\x86\Debug\Content\bola.xnb" />
+    <None Include="bin\Windows\x86\Debug\Content\gameplay.xnb" />
+    <None Include="bin\Windows\x86\Debug\Content\jogador.xnb" />
+    <None Include="bin\Windows\x86\Debug\Content\musica.xnb" />
+    <None Include="bin\Windows\x86\Debug\Content\risada.xnb" />
+    <None Include="Content\bin\Windows\bola.xnb" />
+    <None Include="Content\bin\Windows\Content\bola.xnb" />
+    <None Include="Content\bin\Windows\Content\font.xnb" />
+    <None Include="Content\bin\Windows\Content\gameover.xnb" />
+    <None Include="Content\bin\Windows\Content\gameplay.xnb" />
+    <None Include="Content\bin\Windows\Content\gameplay2.xnb" />
+    <None Include="Content\bin\Windows\Content\gamestart.xnb" />
+    <None Include="Content\bin\Windows\Content\gamewin.xnb" />
+    <None Include="Content\bin\Windows\Content\jogador.xnb" />
+    <None Include="Content\bin\Windows\Content\musica.xnb" />
+    <None Include="Content\bin\Windows\Content\risada.xnb" />
+    <None Include="Content\bin\Windows\gameplay.xnb" />
+    <None Include="Content\bin\Windows\gamewin.xnb" />
+    <None Include="Content\bin\Windows\jogador.xnb" />
     <None Include="Content\font.spritefont" />
+    <None Include="Content\obj\Windows\bola.mgcontent" />
+    <None Include="Content\obj\Windows\Content\bola.mgcontent" />
+    <None Include="Content\obj\Windows\Content\font.mgcontent" />
+    <None Include="Content\obj\Windows\Content\gameover.mgcontent" />
+    <None Include="Content\obj\Windows\Content\gameplay.mgcontent" />
+    <None Include="Content\obj\Windows\Content\gameplay2.mgcontent" />
+    <None Include="Content\obj\Windows\Content\gamestart.mgcontent" />
+    <None Include="Content\obj\Windows\Content\gamewin.mgcontent" />
+    <None Include="Content\obj\Windows\Content\jogador.mgcontent" />
+    <None Include="Content\obj\Windows\Content\musica.mgcontent" />
+    <None Include="Content\obj\Windows\Content\risada.mgcontent" />
+    <None Include="Content\obj\Windows\gameplay.mgcontent" />
+    <None Include="Content\obj\Windows\gamewin.mgcontent" />
+    <None Include="Content\obj\Windows\jogador.mgcontent" />
+    <None Include="obj\x64\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\x64\Release\MonoPongGame.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\x86\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\x86\Debug\MonoPongGame.csproj.CopyComplete" />
+    <None Include="obj\x86\Debug\MonoPongGame.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\x86\Debug\MonoPongGame.csprojAssemblyReference.cache" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -107,6 +187,14 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Windows\Content\" />
+    <Folder Include="bin\Windows\x86\Release\" />
+    <Folder Include="bin\x64\Release\" />
+    <Folder Include="obj\Windows\Content\" />
+    <Folder Include="obj\x64\Release\TempPE\" />
+    <Folder Include="obj\x86\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
