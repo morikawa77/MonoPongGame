@@ -24,8 +24,14 @@ namespace MonoPongGame
 
         //entidade
         Bola bola;
+        /* 
         Bastao jogador1;
         Bastao jogador2;
+        */
+        JogadorSpriteSheet jogador1;
+        JogadorSpriteSheet jogador2;
+
+
 
         // Som
         Song musica;
@@ -98,8 +104,12 @@ namespace MonoPongGame
 
             //istancia do objeto
             bola = new Bola(this, new Vector2(384.0f, 300.0f));
-            jogador1 = new Bastao(this,new Vector2(2, 250.0f));
-            jogador2 = new Bastao(this, new Vector2(765.0f, 250.0f));
+            /*
+            jogador1 = new Bastao(this,new Vector2(2, 250.0f),0,0);
+            jogador2 = new Bastao(this, new Vector2(765.0f, 250.0f),0,0);
+            */
+            jogador1 = new JogadorSpriteSheet(this, new Vector2(16, 250.0f), 32, 128);
+            jogador2 = new JogadorSpriteSheet(this, new Vector2(784.0f, 250.0f), 32, 128);
 
             // carrega musica e efeito sonoro
             musica = Content.Load<Song>("musica");
@@ -383,7 +393,7 @@ namespace MonoPongGame
 
 
                     // Verifica a saida da bola da tela
-                    if (bola.Posicao.X + bola.Textura.Width > 800.0f)
+                    if (bola.Posicao.X + bola.Textura.Width > 800.0f - (jogador2.Textura.Width / 2))
                     {
                         pontoSom.Play();
                         bola = new Bola(this, new Vector2(384.0f, 300.0f));
@@ -395,7 +405,7 @@ namespace MonoPongGame
                         }
                     }
 
-                    if (bola.Posicao.X < 0.0f)
+                    if (bola.Posicao.X < 0.0f + (jogador1.Textura.Width / 2))
                     {
                         pontoSom.Play();
                         bola = new Bola(this, new Vector2(384.0f, 300.0f));

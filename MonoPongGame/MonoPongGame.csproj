@@ -80,6 +80,7 @@
     <Compile Include="Bola.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Jogador.cs" />
+    <Compile Include="JogadorSpriteSheet.cs" />
     <Compile Include="obj\x64\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\x64\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\x64\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
@@ -130,6 +131,7 @@
     <Content Include="Content\gamestart.jpg" />
     <Content Include="Content\gamewin.jpg" />
     <Content Include="Content\jogador.png" />
+    <Content Include="Content\jogadorSprite.png" />
     <Content Include="Content\musica.mp3" />
     <Content Include="Content\risada.wav" />
     <Content Include="Icon.ico" />

@@ -32,3 +32,4 @@ Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\x64\Debug\Content\gameover.
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\x64\Debug\Content\gamewin.xnb
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\obj\x64\Debug\MonoPongGame.csprojAssemblyReference.cache
 Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\x64\Debug\Content\gameplay2.xnb
+Z:\Senac\TPJD\monogame\MonoPongGame\MonoPongGame\bin\x64\Debug\Content\jogadorSprite.xnb
