@@ -108,7 +108,7 @@ namespace MonoPongGame
             jogador1 = new Bastao(this,new Vector2(2, 250.0f),0,0);
             jogador2 = new Bastao(this, new Vector2(765.0f, 250.0f),0,0);
             */
-            jogador1 = new JogadorSpriteSheet(this, new Vector2(16, 250.0f), 32, 128);
+            jogador1 = new JogadorSpriteSheet(this, new Vector2(16.0f, 250.0f), 32, 128);
             jogador2 = new JogadorSpriteSheet(this, new Vector2(784.0f, 250.0f), 32, 128);
 
             // carrega musica e efeito sonoro
@@ -161,7 +161,7 @@ namespace MonoPongGame
                     else if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y == -1.0f)
                     {
                         jogador1.Direcao = new Vector2(0.0f, 2.0f);
-                        if (jogador1.Posicao.Y + jogador1.Textura.Height > 600.0f)
+                        if (jogador1.Posicao.Y + (jogador1.Textura.Height /2) > 600.0f)
                         {
                             jogador1.Direcao = new Vector2(0.0f, 0.0f);
                         }
@@ -270,7 +270,7 @@ namespace MonoPongGame
             {
                 jogador1.Direcao = new Vector2(0.0f, -2.0f);
 
-                if (jogador1.Posicao.Y < 0.0f)
+                if (jogador1.Posicao.Y - (jogador1.Textura.Height / 2) < 0.0f)
                 {
                     jogador1.Direcao = new Vector2(0.0f, 0.0f);
                 }
@@ -279,7 +279,7 @@ namespace MonoPongGame
             else if (teclado.IsKeyDown(Keys.S))
             {
                 jogador1.Direcao = new Vector2(0.0f, 2.0f);
-                if (jogador1.Posicao.Y + jogador1.Textura.Height > 600.0f)
+                if (jogador1.Posicao.Y + (jogador1.Textura.Height / 2) > 600.0f)
                 {
                     jogador1.Direcao = new Vector2(0.0f, 0.0f);
                 }
@@ -393,8 +393,9 @@ namespace MonoPongGame
 
 
                     // Verifica a saida da bola da tela
-                    if (bola.Posicao.X + bola.Textura.Width > 800.0f - (jogador2.Textura.Width / 2))
-                    {
+                    //if (bola.Posicao.X + bola.Textura.Width > 800.0f - (jogador2.Textura.Width / 2))
+                        if (bola.Posicao.X + bola.Textura.Width > 800.0f)
+                        {
                         pontoSom.Play();
                         bola = new Bola(this, new Vector2(384.0f, 300.0f));
                         score[0] += 1;
@@ -505,7 +506,7 @@ namespace MonoPongGame
             {
                 jogador2.Direcao = new Vector2(0.0f, -enemyYacelera);
 
-                if (jogador2.Posicao.Y < 0.0f)
+                if (jogador2.Posicao.Y - (jogador2.Textura.Height / 2) < 0.0f)
                 {
                     jogador2.Direcao = new Vector2(0.0f, 0.0f);
                 }
@@ -514,7 +515,7 @@ namespace MonoPongGame
             else if (bola.Posicao.Y > jogador2.Posicao.Y)
             {
                 jogador2.Direcao = new Vector2(0.0f, enemyYacelera);
-                if (jogador2.Posicao.Y + jogador2.Textura.Height > 600.0f)
+                if (jogador2.Posicao.Y + (jogador2.Textura.Height / 2) > 600.0f)
                 {
                     jogador2.Direcao = new Vector2(0.0f, 0.0f);
                 }
